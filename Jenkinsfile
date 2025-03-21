@@ -1,6 +1,6 @@
 pipeline {
     agent none
-   ages {
+   stages {
         stage('test') {
             steps {
                 script {
