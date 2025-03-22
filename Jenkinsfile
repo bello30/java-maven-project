@@ -7,7 +7,7 @@ library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
         ]
 )
 
-
+@Library('jenkins-shared-library')
 def gv
 
 pipeline {
@@ -30,12 +30,10 @@ pipeline {
                 }
             }
         }
-        stage("build and push image") {
+        stage("build image") {
             steps {
                 script {
-                    buildImage 'nanajanashia/demo-app:jma-3.0'
-                    dockerLogin()
-                    dockerPush 'nanajanashia/demo-app:jma-3.0'
+                    buildImage()
                 }
             }
         }
