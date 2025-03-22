@@ -1,0 +1,19 @@
+image: alpine:3.15.1
+
+workflow:
+  rules:
+    - if: $CI_COMMIT_BRANCH != "master" && $CI_PIPELINE_SOURCE != "merge_request_event"
+      when: never
+    - when: always
+
+stages:
+    - build
+
+build_artifact:
+  stage: build
+  tags:
+    - window
+    - arm
+    - shell
+  script:
+    - mvn package #building the artifact
