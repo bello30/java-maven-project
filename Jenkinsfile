@@ -30,10 +30,12 @@ pipeline {
                 }
             }
         }
-        stage("build image") {
+        stage("build and push image") {
             steps {
                 script {
-                    buildImage 'bello3035/demo-app:jma-2.0'
+                    buildImage 'bello3035/demo-app:jma-3.0'
+                    dockerLogin()
+                    dockerPush 'bello3035/demo-app:jma-3.0'
                 }
             }
         }
