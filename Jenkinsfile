@@ -33,7 +33,7 @@ pipeline {
         stage("build image") {
             steps {
                 script {
-                    buildImage()
+                    buildImage 'bello3035/demo-app:jma-2.0'
                 }
             }
         }
