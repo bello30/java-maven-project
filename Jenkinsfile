@@ -26,16 +26,21 @@ pipeline {
         stage("build and push image") {
             steps {
                 script {
-                    buildImage 'bello3035/demo-app:jma-3.0'
-                    dockerLogin()
-                    dockerPush 'bello3035/demo-app:jma-3.0'
+                    buildImage()
+                }
+            }
+        }
+        stage("test") {
+            steps {
+                script {
+                    echo "Testing the application"
                 }
             }
         }
         stage("deploy") {
             steps {
                 script {
-                    gv.deployApp()
+                    echo "Deploying the application"
                 }
             }
         }
