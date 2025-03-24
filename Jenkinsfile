@@ -34,3 +34,15 @@ pipeline {
             steps {
                 script {
                     echo "Testing the application"
+                }
+            }
+        }
+        stage("deploy") {
+            steps {
+                script {
+                    echo "Deploying application"
+                }
+            }
+        }
+    }
+}
