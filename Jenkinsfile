@@ -8,6 +8,9 @@ pipeline {
     tools {
         maven 'Maven'
     }
+    environment {
+            PATH = "${env.PATH}:/usr/local/bin"
+        }
     stages {
         stage("init") {
             steps {
