@@ -9,7 +9,7 @@ pipeline {
         maven 'Maven'
     }
     environment {
-            PATH = "${env.PATH}:/usr/local/bin"
+            PATH = "${env.PATH}:/usr/local/docker"
         }
     stages {
         stage("init") {
