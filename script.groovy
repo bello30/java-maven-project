@@ -1,9 +1,3 @@
-<<<<<<< HEAD
-def deployApp() {
-    echo 'deploying the application...'
-}
-
-=======
 def buildJar() {
     echo "building the application..."
     sh 'mvn package'
@@ -18,6 +12,5 @@ def buildImage() {
 } 
 def deployApp() {
     echo 'deploying the application...'
-} 
->>>>>>> 4a076336e09569c25b250ebf5bae8951e7337f30
+}
 return this
